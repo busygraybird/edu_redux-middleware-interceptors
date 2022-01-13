@@ -1,0 +1,81 @@
+:root {
+    --app-background-color: #fff5ee;
+
+    --button-border-color: #c98630;
+    --button-background-color: #fde0c1;
+    --button-text-color: #c98630;
+
+    --remove-text-color: #b63737;
+    --remove-background-color: #f89393;
+}
+
+body {
+    margin: 0;
+}
+
+body * {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.round-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--app-background-color);
+}
+
+.app__header {
+    display: flex;
+    flex-flow: row;
+}
+
+.app__header, .app__content {
+    margin: 0 auto;
+}
+
+.app__header-button {
+    margin: auto 0 auto 20px;
+    color: var(--button-text-color);
+    background-color: var(--button-background-color);
+}
+
+.todos-list__todo {
+    display: grid;
+    grid-template-columns: auto min(10%, 60px);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        'title remove'
+        'description remove';
+}
+
+.todo__title {
+    grid-area: title;
+}
+
+.todo__description {
+    grid-area: description;
+    margin: 0;
+}
+
+.todo__remove-button {
+    grid-area: remove;
+    width: 30px;
+    height: 30px;
+    margin: auto 0 auto 20px;
+    font-size: 20px;
+    color: var(--remove-text-color);
+    background-color: var(--remove-background-color);
+}
